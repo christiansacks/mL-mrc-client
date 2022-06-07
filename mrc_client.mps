@@ -33,6 +33,7 @@
 // Version 1.2.9e - MeaTLoTioN [mL] <grAvY>  // The Quantum Wormhole
 // Version 1.2.9f - MeaTLoTioN [mL] <grAvY>  // The Quantum Wormhole
 // Version 1.2.9g - MeaTLoTioN [mL] <grAvY>  // The Quantum Wormhole
+// Version 1.2.9h - MeaTLoTioN [mL] <grAvY>  // The Quantum Wormhole
 //
 // List of changes/fixes:
 //
@@ -126,6 +127,11 @@
 // - When sending a broadcast message using /b the input bar will now turn
 // - green with white text so you know that you're typing a broadcast message.
 //
+// v1.2.9h (Add convert smilies) [mL]
+// - When the setting is enabled in your /set list to convert smilies
+// - then any time someone says =) or :) it will convert it to the ascii
+// - smile characters
+//
 //  *************************************************************************
 //  *   Starting with this release, only the current and previous version   *
 //  *   of the client will be able to connect to the server, make sure      *
@@ -148,7 +154,7 @@
 Uses Cfg
 Uses User
 
-Const MRCVersion = 'Multi Relay Chat MPL    v1.2.9g [mL]'
+Const MRCVersion = 'Multi Relay Chat MPL    v1.2.9h [mL]'
 Const CLBuffer   = 25
 Const InputSize  = 255
 Const MaxBuffer  = 140  // Max input buffer limit [sf]
