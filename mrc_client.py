@@ -79,13 +79,13 @@ chatdats = "%s%schat*.dat" % (datadir, os.sep)
 mrcdir   = "%s%smrc"       % (datadir, os.sep)
 
 # Platform information
-version        = "1.2.9"
+version        = "1.2.9a"
 platform_name  = "MYSTIC"
 system_name    = platform.system()
 machine_arch   = platform.machine()
 debugflag      = True
 version_string = "%s/%s.%s/%s" % (platform_name, system_name, machine_arch, version)
-client_version = "Multi Relay Chat Client v%s  [sf]" % version
+client_version = "Multi Relay Chat Client v%s [mL]" % version
 
 # Check for command-line args
 if(len(sys.argv) < 3) :
