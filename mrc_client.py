@@ -105,6 +105,7 @@ def stripmci(text):
     return re.sub('\|[0-9]{2}', '', text)
 
 # Sat Feb  6 16:55:18 2021  IN: SERVER~~~MeaTLoTioN~~a789653hgjk3876yhuk~ROOMTOPIC:a789653hgjk3876yhuk:test~
+# Sat Aug 27 23:37:50 2022  IN: SERVER~~~MeaTLoTioN~~testing~ROOMTOPIC:testing:test~
 # User chatlog for DLCHATLOG
 def chatlog(data):
     if "CLIENT~" not in data and "SERVER~" not in data:
@@ -119,6 +120,19 @@ def chatlog(data):
         clog     = open(clogfile, "a")
         clog.write("%s %s %s\n" % (ltime, room, message))
         clog.close()
+
+    ltime=time.asctime(time.localtime(time.time()))
+    packet   = data.split("~")
+    if packet[5]:
+      room   = packet[5]
+    else:
+      room   = packet[2]
+    message  = stripmci(packet[6])
+    #if room == 'testing':
+    #    clogfile = "%s%smrcchat.log" % (mrcdir, os.sep)
+    #    clog     = open(clogfile, "a")
+    #    clog.write("%s %s %s\n" % (ltime, room, message))
+    #    clog.close()
 
 # Console logger
 def logger(loginfo):

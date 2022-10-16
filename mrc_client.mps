@@ -444,7 +444,8 @@ Begin
       Write('|08')
         For X:=1 To WinSize+1 Do Begin
             GoToXy(1,WinTT+X-1)
-            Write(ChatLines[Y]+'|16|$X80 ')
+            //Write(ChatLines[Y]+'|16|$X80 ')
+            Write(ChatLines[Y]+'|16|[K ')
             Y:=Y+1
         End
         RefreshChat := False
@@ -1341,8 +1342,8 @@ Begin
 
     // Init the buffer input bar [sf]
     GoToXy(PromptX,PromptY)
-    Write('|16' + MyNamePrompt + InputClr + GetPipe(CIdx) + DBuf +
-         CursorBg + Cursor + InputClr + '|$X78' + InputBg)
+    //Write('|16' + MyNamePrompt + InputClr + GetPipe(CIdx) + DBuf + CursorBg + Cursor + InputClr + '|$X78' + InputBg)
+    Write('|16' + MyNamePrompt + InputClr + GetPipe(CIdx) + DBuf + CursorBg + Cursor + InputClr + '|[K' + InputBg)
 
     Repeat
         While Not Keypressed Do
@@ -1652,8 +1653,8 @@ Begin
             // Update input bar [sf]
             GoToXy(PromptX,PromptY)
 
-            Write('|16' + MyNamePrompt + InputClr + GetPipe(CIdx) +
-                DBuf + CursorBg + Cursor + InputClr + '|$X78' + InputBg + '|16')
+            //Write('|16' + MyNamePrompt + InputClr + GetPipe(CIdx) + DBuf + CursorBg + Cursor + InputClr + '|$X78' + InputBg + '|16')
+            Write('|16' + MyNamePrompt + InputClr + GetPipe(CIdx) + DBuf + CursorBg + Cursor + InputClr + '|[K' + InputBg + '|16')
 
             // Handle counter color coding [sf]
             CClr := 7
