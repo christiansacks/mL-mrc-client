@@ -61,7 +61,7 @@
 # features.
 #
 
-import os, os.path, sys, fnmatch, glob, re
+import os, os.path, sys, fnmatch, glob, re, ssl
 import time, socket, errno, string, platform, traceback
 
 # Import site config
@@ -120,6 +120,21 @@ def chatlog(data):
         clog     = open(clogfile, "a")
         clog.write("%s %s %s\n" % (ltime, room, message))
         clog.close()
+
+    if 'ROOMTOPIC' in data:
+        ltime=time.asctime(time.localtime(time.time()))
+        packet   = data.split("~")
+        if packet[5]:
+          room   = packet[5]
+        else:
+          room   = packet[2]
+        message  = stripmci(packet[6])
+        newTopic = message.split(':')[2]
+        clogfile = "%s%smrcchat.log" % (mrcdir, os.sep)
+        clog     = open(clogfile, "a")
+        clog.write("%s %s %s\n" % (ltime, room, message))
+        clog.close()
+
 
     ltime=time.asctime(time.localtime(time.time()))
     packet   = data.split("~")
